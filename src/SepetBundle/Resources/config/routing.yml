@@ -1,0 +1,3 @@
+sepet_homepage:
+    path:     /
+    defaults: { _controller: SepetBundle:Default:index }

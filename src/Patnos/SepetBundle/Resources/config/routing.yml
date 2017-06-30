@@ -1,0 +1,3 @@
+patnos_sepet_homepage:
+    path:     /
+    defaults: { _controller: PatnosSepetBundle:Default:index }
