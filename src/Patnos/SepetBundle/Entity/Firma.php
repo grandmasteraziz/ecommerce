@@ -3,6 +3,7 @@
 namespace Patnos\SepetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Patnos\SepetBundle\Entity\User;
 
 /**
  * Firma
@@ -77,10 +78,10 @@ class Firma
     /**
      *Many-To-One, Bidirectional
      *
-     * @var  User $adres
+     * 
      *
-     * @ORM\ManyToOne(targetEntity="PatnosSepetBundle\Entity\User",inversedBy="firmalar")
-     * @ORM\JoinColumn(referencedColumnName="id",name="firma_id",onDelete="CASCADE")
+     * @ORM\ManyToOne(targetEntity="Patnos\SepetBundle\Entity\User",inversedBy="firmalar")
+     * @ORM\JoinColumn(referencedColumnName="id",name="uye_id",onDelete="CASCADE")
      * */
     private $uye;
 }

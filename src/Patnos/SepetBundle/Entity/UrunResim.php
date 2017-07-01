@@ -3,6 +3,10 @@
 namespace Patnos\SepetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Patnos\SepetBundle\Entity\User;
+use Patnos\SepetBundle\Entity\Urun;
+
+
 
 /**
  * UrunResim
@@ -33,8 +37,8 @@ class UrunResim
      *
      *
      *
-     * @ORM\ManyToOne(targetEntity="PatnosSepetBundle\Entity\User",inversedBy="fotolar")
-     * @ORM\JoinColumn(referencedColumnName="id",name="foto_id",onDelete="CASCADE")
+     * @ORM\ManyToOne(targetEntity="Patnos\SepetBundle\Entity\User",inversedBy="fotolar")
+     * @ORM\JoinColumn(referencedColumnName="id",name="uye_id",onDelete="CASCADE")
      * */
     private $uye;
 
@@ -43,7 +47,7 @@ class UrunResim
      *
      *
      *
-     * @ORM\ManyToOne(targetEntity="PatnosSepetBundle\Entity\Urun",inversedBy="fotolar")
+     * @ORM\ManyToOne(targetEntity="Patnos\SepetBundle\Entity\Urun",inversedBy="fotolar")
      * @ORM\JoinColumn(referencedColumnName="id",name="foto_id",onDelete="CASCADE")
      * */
     private $urun;

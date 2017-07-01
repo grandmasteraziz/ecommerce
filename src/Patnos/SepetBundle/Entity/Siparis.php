@@ -3,6 +3,7 @@
 namespace Patnos\SepetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Patnos\SepetBundle\Entity\User;
 
 /**
  * Siparis
@@ -69,8 +70,8 @@ class Siparis
      *
      *
      *
-     * @ORM\ManyToOne(targetEntity="PatnosSepetBundle\Entity\User",inversedBy="siparisler")
-     * @ORM\JoinColumn(referencedColumnName="id",name="siparis_id",onDelete="CASCADE")
+     * @ORM\ManyToOne(targetEntity="Patnos\SepetBundle\Entity\User",inversedBy="siparisler")
+     * @ORM\JoinColumn(referencedColumnName="id",name="uye_id",onDelete="CASCADE")
      * */
     private $uye;
 
@@ -78,9 +79,9 @@ class Siparis
     /**
      *Many-To-One, Bidirectional
      *
-     * @var  User $adres
+     * 
      *
-     * @ORM\ManyToOne(targetEntity="PatnosSepetBundle\Entity\SiparisUrun",inversedBy="siparis")
+     * @ORM\ManyToOne(targetEntity="Patnos\SepetBundle\Entity\SiparisUrun",inversedBy="siparis")
      * @ORM\JoinColumn(referencedColumnName="id",name="siparisurun_id",onDelete="CASCADE")
      * */
     private $siparisUrunleri;

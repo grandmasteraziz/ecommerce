@@ -12,6 +12,15 @@ namespace Patnos\SepetBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Patnos\SepetBundle\Entity\Address;
+use Patnos\SepetBundle\Entity\Siparis;
+use Patnos\SepetBundle\Entity\SiparisUrun;
+use Patnos\SepetBundle\Entity\UrunResim;
+use Patnos\SepetBundle\Entity\Firma;
+
+
+
+
 
 /**
  * @ORM\Entity
@@ -41,27 +50,27 @@ class User extends BaseUser
     private $telefon=null;
 
     /**
-     * @ORM\OneToMany(targetEntity="PatnosBlogBundle\Entity\Adres",mappedBy="uye")
+     * @ORM\OneToMany(targetEntity="Patnos\SepetBundle\Entity\Address",mappedBy="uyem")
      */
-    protected $adresler;
+    protected $addresses;
 
     /**
-     * @ORM\OneToMany(targetEntity="PatnosBlogBundle\Entity\Siparis",mappedBy="uye")
+     * @ORM\OneToMany(targetEntity="Patnos\SepetBundle\Entity\Siparis",mappedBy="uye")
      */
     protected $siparisler;
 
     /**
-     * @ORM\OneToMany(targetEntity="PatnosBlogBundle\Entity\SiparisUrun",mappedBy="uye")
+     * @ORM\OneToMany(targetEntity="Patnos\SepetBundle\Entity\SiparisUrun",mappedBy="uye")
      */
     protected $siparisUrun;
 
     /**
-     * @ORM\OneToMany(targetEntity="PatnosBlogBundle\Entity\UrunResim",mappedBy="uye")
+     * @ORM\OneToMany(targetEntity="Patnos\SepetBundle\Entity\UrunResim",mappedBy="uye")
      */
     protected $fotolar;
 
     /**
-     * @ORM\OneToMany(targetEntity="PatnosBlogBundle\Entity\Firma",mappedBy="uye")
+     * @ORM\OneToMany(targetEntity="Patnos\SepetBundle\Entity\Firma",mappedBy="uye")
      */
     protected $firmalar;
 
@@ -72,7 +81,7 @@ class User extends BaseUser
     {
         parent::__construct();
 
-        $this->adresler = new ArrayCollection();
+        $this->addresses= new ArrayCollection();
         $this->siparisler = new ArrayCollection();
         $this->siparisUrun = new ArrayCollection();
         $this->fotolar = new ArrayCollection();

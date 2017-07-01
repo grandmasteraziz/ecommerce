@@ -11,7 +11,7 @@ use Patnos\SepetBundle\Entity\User;
  * @ORM\Table(name="adres")
  * @ORM\Entity(repositoryClass="Patnos\SepetBundle\Repository\AdresRepository")
  */
-class Adres
+class Address
 {
     /**
      * @var int
@@ -39,12 +39,12 @@ class Adres
     /**
      *Many-To-One, Bidirectional
      *
-     * @var  User $adres
+     * 
      *
-     * @ORM\ManyToOne(targetEntity="PatnosSepetBundle\Entity\User",inversedBy="adresler")
-     * @ORM\JoinColumn(referencedColumnName="id",name="adres_id",onDelete="CASCADE")
+     * @ORM\ManyToOne(targetEntity="Patnos\SepetBundle\Entity\User",inversedBy="addresses")
+     * @ORM\JoinColumn(referencedColumnName="id",name="uye_id",onDelete="CASCADE")
      * */
-    private $uye;
+    private $uyem;
 
 }
 

@@ -34,6 +34,12 @@ class AppKernel extends Kernel
 
         return $bundles;
     }
+    
+    public function __construct($environment, $debug)
+    {
+    	date_default_timezone_set( 'Europe/Paris' );
+    	parent::__construct($environment, $debug);
+    }
 
     public function getRootDir()
     {
@@ -54,4 +60,6 @@ class AppKernel extends Kernel
     {
         $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
     }
+   
+    
 }

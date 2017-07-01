@@ -5,6 +5,10 @@ namespace Patnos\SepetBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Intl\Data\Util\ArrayAccessibleResourceBundle;
+use Patnos\SepetBundle\Entity\SiparisUrun;
+use Patnos\SepetBundle\Entity\UrunResim;
+
+
 
 /**
  * Urun
@@ -53,12 +57,12 @@ class Urun
 
 
     /**
-     * @ORM\OneToMany(targetEntity="PatnosBlogBundle\Entity\SiparisUrun",mappedBy="urun")
+     * @ORM\OneToMany(targetEntity="Patnos\SepetBundle\Entity\SiparisUrun",mappedBy="urun")
      */
     private $siparisler;
 
     /**
-     * @ORM\OneToMany(targetEntity="PatnosBlogBundle\Entity\UrunResim",mappedBy="urun")
+     * @ORM\OneToMany(targetEntity="Patnos\SepetBundle\Entity\UrunResim",mappedBy="urun")
      */
     private $fotolar;
 

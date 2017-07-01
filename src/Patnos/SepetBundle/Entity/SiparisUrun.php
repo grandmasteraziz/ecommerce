@@ -3,6 +3,9 @@
 namespace Patnos\SepetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Patnos\SepetBundle\Entity\User;
+use Patnos\SepetBundle\Entity\Siparis;
+use Patnos\SepetBundle\Entity\Urun;
 
 /**
  * SiparisUrun
@@ -30,7 +33,7 @@ class SiparisUrun
     private $urunMiktar;
 
     /**
-     * @ORM\OneToMany(targetEntity="PatnosBlogBundle\Entity\Siparis",mappedBy="siparis_urun")
+     * @ORM\OneToMany(targetEntity="Patnos\SepetBundle\Entity\Siparis",mappedBy="siparis_urun")
      */
     private $siparis;
 
@@ -39,7 +42,7 @@ class SiparisUrun
      *
      *
      *
-     * @ORM\ManyToOne(targetEntity="PatnosSepetBundle\Entity\User",inversedBy="siparis_urun")
+     * @ORM\ManyToOne(targetEntity="Patnos\SepetBundle\Entity\User",inversedBy="siparis_urun")
      * @ORM\JoinColumn(referencedColumnName="id",name="uye_id",onDelete="CASCADE")
      * */
     private  $uye;
@@ -49,7 +52,7 @@ class SiparisUrun
      *
      *
      *
-     * @ORM\ManyToOne(targetEntity="PatnosSepetBundle\Entity\Urun",inversedBy="siparis_urun")
+     * @ORM\ManyToOne(targetEntity="Patnos\SepetBundle\Entity\Urun",inversedBy="siparis_urun")
      * @ORM\JoinColumn(referencedColumnName="id",name="urun_id",onDelete="CASCADE")
      * */
     private  $urun;
